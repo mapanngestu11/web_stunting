@@ -13,11 +13,11 @@ class User  extends CI_Controller
         $this->load->model('M_user');
 
 
-        // if ($this->session->userdata('masuk') != TRUE) {
-        //     $this->session->set_flashdata('msg', '<div class="alert alert-warning" role="alert" style="color:white;">Login Terlebih Dahulu ! </div>');
-        //     $url = base_url('Login');
-        //     redirect($url);
-        // }
+        if ($this->session->userdata('masuk') != TRUE) {
+            $this->session->set_flashdata('msg', '<div class="alert alert-warning" role="alert" style="color:white;">Login Terlebih Dahulu ! </div>');
+            $url = base_url('Login');
+            redirect($url);
+        }
     }
 
     public function index()

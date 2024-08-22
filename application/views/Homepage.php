@@ -57,7 +57,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6 text-md-start text-center py-6">
-            <h1 class="mb-4 fs-9 fw-bold">Informasi Data Stunting</h1>
+            <h1 class="mb-4 fs-9 fw-bold">Informasi Data Stunting, </h1>
             <p class="mb-6 lead text-secondary">Website data stunting adalah platform yang menyediakan informasi lengkap tentang stunting,<br class="d-none d-xl-block" />yaitu kondisi pertumbuhan anak yang terganggu akibat malnutrisi kronis dan infeksi berulang.</p>
             <div class="text-center text-md-start"><a class="btn btn-warning me-3 btn-lg" href="#!" role="button">Get started</a></div>
           </div>

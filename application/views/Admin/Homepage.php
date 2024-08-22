@@ -31,7 +31,7 @@
                 <div class="card-body">
                   <div class="row align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Informasi Balita</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Informasi User</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">35</div>
 
                     </div>
@@ -48,12 +48,12 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Jumlah Kader</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Jumlah Laporan Masuk</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
 
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-user fa-2x text-success"></i>
+                      <i class="fas fa-file fa-2x text-success"></i>
                     </div>
                   </div>
                 </div>
@@ -65,12 +65,12 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Jumlah User</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Menunggu Verifikasi</div>
                       <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">5</div>
 
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-users fa-2x text-info"></i>
+                      <i class="fas fa-file fa-2x text-danger"></i>
                     </div>
                   </div>
                 </div>
@@ -80,10 +80,10 @@
 
 
             <!-- Area Chart -->
-            <div class="col-xl-12 col-lg-7">
+            <div class="col-xl-6 col-lg-7">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Monthly Recap Report</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Data Grafik</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -107,13 +107,26 @@
         </div>
       </div>
       <!-- Pie Chart -->
+      <div class="col-xl-6 col-lg-7">
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Data Grafik</h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-pie pt-4">
+              <canvas id="myPieChart"></canvas>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
       <!-- Invoice Example -->
 
       <!-- Message From Customer-->
       <div class="col-xl-12 col-lg-5 ">
         <div class="card">
           <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-light">Message From Customer</h6>
+            <h6 class="m-0 font-weight-bold text-light">Infromasi Perubahan Data</h6>
           </div>
           <div>
             <div class="customer-message align-items-center">
@@ -146,7 +159,7 @@
               </a>
             </div>
             <div class="card-footer text-center">
-              <a class="m-0 small text-primary card-link" href="#">View More <i
+              <a class="m-0 small text-primary card-link" href="<?php echo base_url('Admin/Perubahan/') ?>">View More <i
                 class="fas fa-chevron-right"></i></a>
               </div>
             </div>

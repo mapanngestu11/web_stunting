@@ -23,21 +23,16 @@
 
                     <img class="logo_posyandu" src="<?php echo base_url() . "assets/Homepage/assets/"; ?>img/logo_posyandu.png" height="70" alt="logo" />
                   </div>
-                  <form class="user" action="" method="POST">
+                  <p><?php echo $this->session->flashdata('msg'); ?></p>
+                  <form class="user" action="<?php echo base_url() . 'Login/auth' ?>" method="POST">
                     <div class="form-group">
-                      <input type="username" class="form-control" id="exampleInputEmail" aria-describedby="usename"
+                      <input type="username" name="username" class="form-control" id="exampleInputEmail" aria-describedby="usename"
                       placeholder="Username" required="">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" required="">
+                      <input type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Password" required="">
                     </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small" style="line-height: 1.5rem;">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember
-                        Me</label>
-                      </div>
-                    </div>
+                    <br>
                     <div class="form-group">
                       <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>

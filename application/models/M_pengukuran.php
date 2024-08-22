@@ -22,6 +22,12 @@ class M_pengukuran extends CI_Model
       b.kader,
       b.jenis_kelamin,
       b.tgl_lahir,
+      b.tempat_lahir,
+      b.nik_ayah,
+      b.nama_ayah,
+      b.nik_ibu,
+      b.nama_ibu,
+      b.alamat,
       a.tinggi_badan,
       a.berat_badan,
       a.lingkar_kepala,
@@ -33,7 +39,7 @@ class M_pengukuran extends CI_Model
     $this->db->from('tabel_pengukuran as a');
     $this->db->join('tabel_data_balita as b', 'a.no_pendataan = b.no_pendataan');
     $this->db->join('tabel_user as c', 'a.id_user = b.id_user');
-    $this->db->limit(1);
+    $this->db->group_by('a.id_stunting');
     return $query = $this->db->get();
   }
 
@@ -56,9 +62,9 @@ function input_data($data_pengukuran, $table)
   $this->db->insert($table, $data_pengukuran);
 }
 
-function delete_data($id)
+function delete_data($id_stunting)
 {
-  $hsl = $this->db->query("DELETE FROM tabel_pengukuran WHERE id='$id'");
+  $hsl = $this->db->query("DELETE FROM tabel_pengukuran WHERE id_stunting='$id_stunting'");
   return $hsl;
 }
 

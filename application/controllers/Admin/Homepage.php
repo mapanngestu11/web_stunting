@@ -3,26 +3,26 @@
 class Homepage  extends CI_Controller
 {
 
-    // function __construct()
-    // {
-    //     parent::__construct();
+    function __construct()
+    {
+        parent::__construct();
 
-    //     $this->load->helper('form');
-    //     $this->load->helper('url');
-    //     $this->load->library('upload');
-    //     $this->load->model('M_login');
-    //     $this->load->model('M_kelas');
-    //     $this->load->model('M_siswa');
-    //     $this->load->model('M_pembayaran');
-    //     $this->load->model('M_status_pembayaran');
-    //     $this->load->model('M_kegiatan');
+        $this->load->helper('form');
+        $this->load->helper('url');
+        $this->load->library('upload');
+        // $this->load->model('M_login');
+        // $this->load->model('M_kelas');
+        // $this->load->model('M_siswa');
+        // $this->load->model('M_pembayaran');
+        // $this->load->model('M_status_pembayaran');
+        // $this->load->model('M_kegiatan');
 
-    //     if ($this->session->userdata('masuk') != TRUE) {
-    //         $this->session->set_flashdata('msg', '<div class="alert alert-warning" role="alert">Login Terlebih Dahulu ! </div>');
-    //         $url = base_url('Login');
-    //         redirect($url);
-    //     }
-    // }
+        if ($this->session->userdata('masuk') != TRUE) {
+            $this->session->set_flashdata('msg', '<div class="alert alert-warning" role="alert">Login Terlebih Dahulu ! </div>');
+            $url = base_url('Login');
+            redirect($url);
+        }
+    }
 
     public function index()
     {

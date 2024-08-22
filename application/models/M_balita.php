@@ -38,9 +38,9 @@ function input_data($data_balita, $table)
   $this->db->insert($table, $data_balita);
 }
 
-function delete_data($id)
+function delete_data($id_data_balita)
 {
-  $hsl = $this->db->query("DELETE FROM tabel_data_balita WHERE id='$id'");
+  $hsl = $this->db->query("DELETE FROM tabel_data_balita WHERE id_data_balita='$id_data_balita'");
   return $hsl;
 }
 
@@ -50,4 +50,13 @@ function update_data($where, $data, $table)
   $this->db->update($table, $data);
 }
 
+
+function tampil_data_bynopendataan ($no_pendataan)
+{
+  $this->db->select('*');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('no_pendataan',$no_pendataan);
+  $query = $this->db->get();
+  return $query;
+}
 }

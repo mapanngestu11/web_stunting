@@ -61,7 +61,7 @@
                                 <input type="password" name="password" class="form-control" placeholder="***" required="" minlength="8">
                               </div>
                             </div>
-                            <div class="form-group mt-2">
+                            <div class="form-group mt-4">
                               <div class="row">
                                 <div class="col-md-4">
                                   <label>Nama Lengkap</label>
@@ -71,8 +71,11 @@
                                   <label>Kader</label>
                                   <select class="form-control" name="kader">
                                     <option value=""> Pilih </option>
-                                    <option value="1"> 1 </option>
-                                    <option value="2"> 2 </option>
+                                    <option value="Mekarsari 1"> Mekarsari 1 </option>
+                                    <option value="Mekarsari 2"> Mekarsari 2 </option>
+                                    <option value="Mekarsari 3"> Mekarsari 3 </option>
+                                    <option value="Mekarsari 4"> Mekarsari 4 </option>
+                                    <option value="Mekarsari 5"> Mekarsari 5 </option>
                                   </select>
                                 </div>
                                 <div class="col-md-4">
@@ -82,6 +85,7 @@
                                     <option value="Kader"> Kader </option>
                                     <option value="Bidan"> Bidan </option>
                                     <option value="Kepdes"> Kepala Desa </option>
+                                    <option value="Admin"> Admin </option>
                                   </select>
                                 </div>
                               </div>
@@ -105,8 +109,9 @@
                     <thead class="thead-light">
                       <tr>
                         <th>No</th>
-                        <th>Nama Lengkap</th>
                         <th>Username</th>
+                        <th>Nama Lengkap</th>
+                        <th>Kader</th>
                         <th>Hak Akses</th>
                         <th>Last Login</th>
                         <th>Edit</th>
@@ -115,28 +120,54 @@
                     </thead>
                     <tfoot>
                       <tr>
-                       <th>No</th>
-                       <th>Nama Lengkap</th>
-                       <th>Username</th>
-                       <th>Hak Akses</th>
-                       <th>Last Login</th>
-                       <th>Edit</th>
-                       <th>Hapus</th>
-                     </tr>
+                        <th>No</th>
+                        <th>Username</th>
+                        <th>Nama Lengkap</th>
+                        <th>Kader</th>
+                        <th>Hak Akses</th>
+                        <th>Last Login</th>
+                        <th>Edit</th>
+                        <th>Hapus</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      <?php
+                      $no = 0;
+                      foreach ($user->result_array() as $row) :
 
-                   </tfoot>
-                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>1</td>
-                      <td>1</td>
-                      <td>1</td>
-                      <td>1</td>
-                      <td>1</td>
-                      <td>1</td>
-                    </tr>
-                  </tbody>
-                </table>
+                        $no++;
+                        $id_user               = $row['id_user'];
+                        $username               = $row['username'];
+                        $nama_lengkap           = $row['nama_lengkap'];
+                        $kader       = $row['kader'];
+                        $hak_akses        = $row['hak_akses'];
+                        $last_login      = $row['last_login'];
+
+                        ?>
+                        <tr>
+                          <td><?php echo $no;?></td>
+                          <td><?php echo $username;?></td>
+                          <td><?php echo $nama_lengkap;?></td>
+                          <td><?php echo $kader;?></td>
+                          <td>
+                            <?php if ($hak_akses == 'Admin') { ?>
+                              <span class="badge badge-danger">Admin</span>
+                            <?php }elseif($hak_akses == 'Kader'){?>
+                              <span class="badge badge-primary">Kader</span>
+                            <?php }elseif($hak_akses == 'Bidan'){ ?>
+                              <span class="badge badge-success">Bidan</span>
+                            <?php }else{ ?>
+                              <span class="badge badge-warning">Kepala Desa</span>
+                            <?php } ?>
+                          </td>
+                          <td><?php echo $last_login;?></td>
+                          <td><button class="btn btn-warning">Edit</button></td>
+                          <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#EditModal<?php echo $id_user;?>">Hapus</button></td>
+                        </tr>
+                      <?php endforeach;?>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
