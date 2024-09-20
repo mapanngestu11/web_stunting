@@ -51,6 +51,7 @@ class Pengukuran  extends CI_Controller
     $lingkar_kepala = $this->input->post('lingkar_kepala');
     $keterangan = $this->input->post('keterangan');
     $tanggal_pengukuran = $this->input->post('tanggal_pengukuran');
+    $status_pengukuran = 'Sudah';
     $id_user = "1";
     $waktu =  date('Y-m-d h:i:s');
     $cek_no_pendataan =  $this->M_balita->tampil_data_bynopendataan($no_pendataan);
@@ -187,11 +188,11 @@ public function add()
 
   function isStunting($zScore) {
     if ($zScore <= -3) {
-      return "Severe Stunting";
+      return "1";
     } elseif ($zScore <= -2) {
-      return "Stunting";
+      return "2";
     } else {
-      return "Not Stunting";
+      return "3";
     }
   }
 

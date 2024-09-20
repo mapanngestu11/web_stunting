@@ -33,6 +33,37 @@ class M_balita extends CI_Model
   }
 }
 
+public function get_data_by_range()
+{
+  $this->db->select('
+    a.id_stunting,
+    a.no_pendataan,
+    b.nama_balita,
+    b.kader,
+    b.jenis_kelamin,
+    b.tgl_lahir,
+    b.tempat_lahir,
+    b.nik_ayah,
+    b.nama_ayah,
+    b.nik_ibu,
+    b.nama_ibu,
+    b.alamat,
+    a.tinggi_badan,
+    a.berat_badan,
+    a.lingkar_kepala,
+    a.keterangan,
+    a.tanggal_pengukuran,
+    a.status_stunting,
+    b.status_pengukuran,
+    c.nama_lengkap,
+    a.waktu,');
+  $this->db->from('tabel_pengukuran as a');
+  $this->db->join('tabel_data_balita as b', 'a.no_pendataan = b.no_pendataan');
+  $this->db->join('tabel_user as c', 'a.id_user = b.id_user');
+  $this->db->group_by('a.id_stunting');
+  return $query = $this->db->get();
+}
+
 function input_data($data_balita, $table)
 {
   $this->db->insert($table, $data_balita);

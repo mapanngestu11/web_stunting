@@ -69,7 +69,7 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="charts.html">
+    <a class="nav-link" href="<?php echo base_url('Admin/Galeri/') ?>">
       <i class="fas fa-fw fa-brush"></i>
       <span>Galeri</span>
     </a>
@@ -105,6 +105,7 @@
       <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Data Balita</h6>
+
           <a class="collapse-item" href="<?php echo base_url('Admin/Pengukuran/') ?>">Informasi Pengukuran</a>
         </div>
       </div>
@@ -181,6 +182,7 @@
       <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Data Balita</h6>
+          <a class="collapse-item" href="<?php echo base_url('Admin/Balita/') ?>">Data Balita</a>
           <a class="collapse-item" href="<?php echo base_url('Admin/Pengukuran/') ?>">Informasi Pengukuran</a>
         </div>
       </div>

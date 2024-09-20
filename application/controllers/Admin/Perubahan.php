@@ -27,10 +27,7 @@ class Perubahan  extends CI_Controller
     $this->load->view('Admin/Pages/Head.php');
     $data['perubahan_data'] = $this->M_perubahan_data->tampil_data();
     $data['balita'] = $this->M_balita->tampil_data();
-    // echo "<pre>";
-    // print_r($data['perubahan_data']->result());
-    // echo "</pre>";
-    // die();
+
     $this->load->view('Admin/List.perubahan_data.php',$data);
 
   }

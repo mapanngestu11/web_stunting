@@ -29,9 +29,13 @@
 
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary"><?php echo $tittle;?></h6>
-
                 </div>
-                <form>
+                <style type="text/css">
+                  .tombol_cetak{
+                    margin-top: 35px;
+                  }
+                </style>
+                <form action="<?php echo base_url('Admin/Laporan/cetak_laporan_bulan') ?>" method="POST">
                   <div class="form-group row ml-3">
                     <div class="col-md-4">
                       <label>Tanggal Awal</label>
@@ -42,7 +46,7 @@
                       <input type="date" name="tanggal_akhir" class="form-control" required="">
                     </div>
                     <div class="col-md-3">
-                      <button class="btn btn-danger mt-4">Cetak</button>
+                      <button class="btn btn-danger tombol_cetak">Cetak</button>
                     </div>
                   </div>
                 </form>

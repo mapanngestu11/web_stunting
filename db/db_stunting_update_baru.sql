@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Agu 2024 pada 02.11
+-- Waktu pembuatan: 17 Sep 2024 pada 04.14
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 5.6.40
 
@@ -51,8 +51,7 @@ CREATE TABLE `tabel_data_balita` (
 --
 
 INSERT INTO `tabel_data_balita` (`id_data_balita`, `no_pendataan`, `kader`, `nama_balita`, `tempat_lahir`, `tgl_lahir`, `jenis_kelamin`, `nik_ayah`, `nama_ayah`, `nik_ibu`, `nama_ibu`, `alamat`, `status_pengukuran`, `id_user`, `waktu`) VALUES
-(2, '000003', 'MEKAR SARI 2', 'testing', 'tempat', '2024-05-01', 'Laki-laki', 'nik', 'ayah', 'nik', 'ibu', 'alamat', '', 1, '2024-08-07 21:54:13'),
-(3, '000002', 'MEKAR SARI 2', 'testing nomor 2', 'tempat', '2024-05-02', 'Laki-laki', 'nik', 'ayah', 'nik', 'ibu', 'alamat', '', 1, '2024-08-07 21:54:13');
+(1, '000001', 'MEKAR SARI 1', 'budi', 'tangerang', '2024-09-07', 'Laki-laki', '123', 'ayah', '123', 'ibu', 'tangerang', 'Sudah', 1, '2024-09-06 21:14:13');
 
 -- --------------------------------------------------------
 
@@ -68,6 +67,13 @@ CREATE TABLE `tabel_galeri` (
   `id_user` int(11) NOT NULL,
   `waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tabel_galeri`
+--
+
+INSERT INTO `tabel_galeri` (`id_galeri`, `nama_gambar`, `deskripsi`, `gambar`, `id_user`, `waktu`) VALUES
+(2, 'testing gambar', 'testing gambar', 'bb222de4ebbf128a753bf12f9c948723.png', 1, '2024-09-17 01:47:06');
 
 -- --------------------------------------------------------
 
@@ -106,14 +112,7 @@ CREATE TABLE `tabel_pengukuran` (
 --
 
 INSERT INTO `tabel_pengukuran` (`id_stunting`, `no_pendataan`, `tinggi_badan`, `berat_badan`, `lingkar_kepala`, `keterangan`, `tanggal_pengukuran`, `status_stunting`, `id_user`, `waktu`) VALUES
-(3, '000003', '50', '20', '', 'keterangan', '2024-08-15', '1', 1, '2024-08-15 03:04:41'),
-(4, '000003', '50', '70', '', 'keterangan', '2024-08-09', '1', 1, '2024-08-09 02:24:59'),
-(5, '000003', '50', '90', '', 'keterangan', '2024-08-15', '2', 1, '2024-08-15 02:52:12'),
-(6, '000003', '90', '90', '', 'testing', '2024-08-14', 'Not Stunting', 1, '2024-08-15 02:59:34'),
-(7, '000003', '50', '40', '', 'keterangan', '2024-08-15', 'Severe Stunting', 1, '2024-08-15 03:03:49'),
-(8, '000003', '12', '10', '', 'keterangan', '2024-08-24', 'Severe Stunting', 1, '2024-08-20 01:57:38'),
-(9, '000002', '90', '98', '', 'keterangan 1', '2024-08-20', 'Not Stunting', 1, '2024-08-20 01:58:00'),
-(10, '000002', '90', '90', '90', 'keterangan 2', '2024-08-20', 'Not Stunting', 1, '2024-08-20 01:58:52');
+(1, '000001', '10', '10', '10', 'data baru', '2024-09-15', '1', 1, '2024-09-14 18:19:14');
 
 -- --------------------------------------------------------
 
@@ -201,6 +200,12 @@ ALTER TABLE `tabel_data_balita`
   ADD PRIMARY KEY (`id_data_balita`);
 
 --
+-- Indeks untuk tabel `tabel_galeri`
+--
+ALTER TABLE `tabel_galeri`
+  ADD PRIMARY KEY (`id_galeri`);
+
+--
 -- Indeks untuk tabel `tabel_kader`
 --
 ALTER TABLE `tabel_kader`
@@ -238,7 +243,13 @@ ALTER TABLE `tabel_user`
 -- AUTO_INCREMENT untuk tabel `tabel_data_balita`
 --
 ALTER TABLE `tabel_data_balita`
-  MODIFY `id_data_balita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_data_balita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `tabel_galeri`
+--
+ALTER TABLE `tabel_galeri`
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tabel_kader`
@@ -250,7 +261,7 @@ ALTER TABLE `tabel_kader`
 -- AUTO_INCREMENT untuk tabel `tabel_pengukuran`
 --
 ALTER TABLE `tabel_pengukuran`
-  MODIFY `id_stunting` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_stunting` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tabel_perubahan_data`
