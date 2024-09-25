@@ -68,8 +68,15 @@
                               <label>Kader</label>
                               <select class="form-control" name="kader" required="">
                                 <option value="">Pilih</option>
-                                <option value="MEKAR SARI 1">MEKAR SARI 1</option>
-                                <option value="MEKAR SARI 2">MEKAR SARI 2</option>
+                                <option value="Mekarsari 1"> Mekarsari 1 </option>
+                                <option value="Mekarsari 2"> Mekarsari 2 </option>
+                                <option value="Mekarsari 3"> Mekarsari 3 </option>
+                                <option value="Mekarsari 4"> Mekarsari 4 </option>
+                                <option value="Mekarsari 5"> Mekarsari 5 </option>
+                                <option value="Mekarsari 6"> Mekarsari 6 </option>
+                                <option value="Mekarsari 7"> Mekarsari 7 </option>
+                                <option value="Mekarsari 8"> Mekarsari 8 </option>
+                                <option value="Mekarsari 9"> Mekarsari 9</option>
                               </select>
                             </div>
                           </div>

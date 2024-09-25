@@ -146,12 +146,12 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="charts.html">
-      <i class="fas fa-fw fa-brush"></i>
-      <span>Galeri</span>
-    </a>
-  </li>
-  <hr class="sidebar-divider">
+   <a class="nav-link" href="<?php echo base_url('Admin/Galeri/') ?>">
+    <i class="fas fa-fw fa-brush"></i>
+    <span>Galeri</span>
+  </a>
+</li>
+<hr class="sidebar-divider">
 </ul>
 <?php elseif($this->session->userdata('hak_akses')==='Kader'):?> 
   <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
@@ -243,11 +243,11 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="charts.html">
-        <i class="fas fa-fw fa-brush"></i>
-        <span>Galeri</span>
-      </a>
-    </li>
-    <hr class="sidebar-divider">
-  </ul>
-  <?php endif;?>
+     <a class="nav-link" href="<?php echo base_url('Admin/Galeri/') ?>">
+      <i class="fas fa-fw fa-brush"></i>
+      <span>Galeri</span>
+    </a>
+  </li>
+  <hr class="sidebar-divider">
+</ul>
+<?php endif;?>

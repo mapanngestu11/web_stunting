@@ -15,11 +15,11 @@
         </span>
       </a>
       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-        <a class="dropdown-item" href="#">
+        <a class="dropdown-item" href="<?php echo base_url('Admin/User/') ?>">
           <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
           Informasi User
         </a>
-        <a class="dropdown-item" href="#">
+        <a class="dropdown-item" href="<?php echo base_url('Admin/Laporan/') ?>">
           <i class="fas fa-users fa-sm fa-fw mr-2 text-gray-400"></i>
           Data Laporan
         </a>

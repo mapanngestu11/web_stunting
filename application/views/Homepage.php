@@ -205,10 +205,15 @@
 
 
                         ?>
-
+                        <style type="text/css">
+                          .hasil_gambar{
+                            width: 348px !important;
+                            height: 185px !important;
+                          }
+                        </style>
                         
                         <div class="col-md-4 mb-4">
-                          <div class="card"><img class="card-img-top" src="<?php echo base_url() . "assets/upload/"; ?><?php echo $gambar;?>" alt="" />
+                          <div class="card"><img class="card-img-top hasil_gambar" src="<?php echo base_url() . "assets/upload/"; ?><?php echo $gambar;?>" alt="" />
                             <div class="card-body ps-0">
 
                               <p class="text-secondary">By <a class="fw-bold text-decoration-none me-1" href="#">Admin</a>|<span class="ms-1"> <?php echo $formattedDate; ?></span></p>
@@ -244,11 +249,12 @@
                         <div class="container border-top py-3">
                           <div class="row justify-content-between">
                             <div class="col-12 col-md-auto mb-1 mb-md-0">
-                              <p class="mb-0">&copy; 2022 Your Company Inc </p>
+                              <?php $tahun = date('Y');?>
+                              <p class="mb-0">&copy; <?php echo $tahun;?> , Desa Ketanggung </p>
                             </div>
                             <div class="col-12 col-md-auto">
                               <p class="mb-0">
-                                Made with<span class="fas fa-heart mx-1 text-danger"> </span>by <a class="text-decoration-none ms-1" href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
+                                <span class="fas fa-heart mx-1 text-danger"> </span> <a class="text-decoration-none ms-1" href="https://maps.app.goo.gl/1B6EExiYrh6et5Qv8" target="_blank">Maps Here</a></p>
                               </div>
                             </div>
                           </div>
