@@ -93,7 +93,7 @@
                             <div class="row form-group mt-4">
                               <div class="col-md-6">
                                 <label>Diajukan Oleh</label>
-                                <input type="text" name="diajukan_oleh" class="form-control" readonly="" value="admin">
+                                <input type="text" name="diajukan_oleh" class="form-control">
                               </div>
                               <div class="col-md-6">
                                 <label>Tanggal</label>
@@ -234,6 +234,9 @@
         $id_perubahan_data               = $row['id_perubahan_data'];
         $no_pendataan                 = $row['no_pendataan'];
         $nama_balita           = $row['nama_balita'];
+        $kader = $row['kader'];
+        $keterangan = $row['keterangan'];
+        $diajukan_oleh = $row['diajukan_oleh'];
 
         ?>
         <!-- modal edit -->
@@ -249,47 +252,30 @@
 
               <!-- Modal body -->
               <div class="modal-body">
-                <form action="<?php echo base_url('Admin/Perubahan/add/') ?>" method="POST">
+                <form action="<?php echo base_url('Admin/Perubahan/Update/') ?>" method="POST">
                   <span class="badge badge-Primary mb-2">Data Informasi Perubahan Data</span>
                   <div class="form-group">
                     <div class="row">
                       <div class="col-md-6">
                         <label>Nomor Pendataan</label>
-                        <select class="form-control" name="no_pendataan" required="">
-                          <option value="">Pilih</option>
-                          <?php 
-                          $no = 0;
-                          foreach ($balita->result_array() as $info_balita) :
-                            $nomor_pendataan_balita = $info_balita['no_pendataan'];
-                            $nama_balita = $info_balita['nama_balita'];
-                            ?>
-                            <option value="<?php echo $nomor_pendataan_balita;?>"><?php echo $nomor_pendataan_balita;?>, <?php echo $nama_balita;?></option>
-                          <?php endforeach;?>
-                        </select>
-
+                        <input type="text" name="no_pendataan" class="form-control" value="<?php echo $no_pendataan;?>" readonly>
+                        <input type="hidden" name="id_perubahan_data" value="<?php echo $id_perubahan_data;?>">
                       </div>
                       <div class="col-md-6">
                         <label>Kader</label>
-                        <select class="form-control" name="kader">
-                          <option value=""> Pilih </option>
-                          <option value="Mekarsari 1"> Mekarsari 1 </option>
-                          <option value="Mekarsari 2"> Mekarsari 2 </option>
-                          <option value="Mekarsari 3"> Mekarsari 3 </option>
-                          <option value="Mekarsari 4"> Mekarsari 4 </option>
-                          <option value="Mekarsari 5"> Mekarsari 5 </option>
-                        </select>
+                        <input type="text" name="kader" class="form-control" value="<?php echo $kader;?>" readonly>
                       </div>
                     </div>
                     <div class="row form-group mt-4">
                       <div class="col-md-12">
                         <label>Keterangan</label>
-                        <textarea class="form-control" name="keterangan" required=""></textarea>
+                        <input type="text" name="keterangan" class="form-control" value="<?php echo $keterangan;?>" readonly>
                       </div>
                     </div>
                     <div class="row form-group mt-4">
                       <div class="col-md-6">
                         <label>Diajukan Oleh</label>
-                        <input type="text" name="diajukan_oleh" class="form-control" readonly="" value="admin">
+                        <input type="text" name="diajukan_oleh" class="form-control"  value="<?php echo $diajukan_oleh;?>" readonly>
                       </div>
                       <div class="col-md-6">
                         <label>Tanggal</label>
@@ -303,24 +289,34 @@
                     <div class="row form-group">
                       <div class="col-md-6">
                         <label>Nama Penerima</label>
-                        <input type="text" name="penerima" class="form-control" required="" readonly="">
+                        <input type="text" name="penerima" class="form-control" required="">
                       </div>
                       <div class="col-md-6">
                         <label>Tanggal Penerima</label>
-                        <input type="text" name="tanggal_konfirmasi" class="form-control" readonly="">
+                        <input type="date" name="tanggal_konfirmasi" class="form-control">
+                      </div>
+                    </div>
+                    <div class="row form-group">
+                      <div class="col-md-12">
+                        <label>Status Perubahan</label>
+                        <select class="form-control" name="status_keterangan" required="">
+                          <option value=""><?php echo $status_keterangan;?></option>
+                          <option value="Tolak"> Tolak </option>
+                          <option value="Diterima"> Diterima </option>
+                        </select>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-12">
                         <label>Keterangan Konfirmasi</label>
-                        <textarea class="form-control" name="keterangan_konfirmasi" readonly=""></textarea>
+                        <textarea class="form-control" name="keterangan_konfirmasi" ></textarea>
                       </div>
                     </div>
                   </div>
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-success">Hapus Data</button>
+                  <button type="submit" class="btn btn-success">Update Data</button>
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
               </form>

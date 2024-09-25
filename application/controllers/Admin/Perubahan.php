@@ -43,10 +43,34 @@ class Perubahan  extends CI_Controller
   public function update()
   {
 
-    $this->M_pengukuran->update_data($where,$data, 'tabel_pengukuran');
-    echo $this->session->set_flashdata('msg', 'success_update');
-    redirect('Admin/Pengukuran');
+    $id_perubahan_data = $this->input->post('id_perubahan_data');
+    $no_pendataan = $this->input->post('no_pendataan');
+    $kader = $this->input->post('kader');
+    $keterangan = $this->input->post('keterangan');
+    $status_keterangan = $this->input->post('status_keterangan');
+    $diajukan_oleh = $this->input->post('diajukan_oleh');
+    $tanggal_pengajuan =  date('Y-m-d h:i:s');
+    $waktu = date('Y-m-d h:i:s');
 
+    $data = array(
+      'no_pendataan' => $no_pendataan,
+      'kader' => $kader,
+      'keterangan' => $keterangan,
+      'status_keterangan' => $status_keterangan,
+      'diajukan_oleh' => $diajukan_oleh,
+      'tanggal_pengajuan' => $tanggal_pengajuan,
+      'waktu' => $waktu
+    );
+    // var_dump($data);
+    // die();
+
+
+    $where = array(
+      'id_perubahan_data' => $id_perubahan_data
+    );
+    $this->M_perubahan_data->update_data($where,$data, 'tabel_perubahan_data');
+    echo $this->session->set_flashdata('msg', 'success_update');
+    redirect('Admin/Perubahan');
   }
   public function add()
   {
