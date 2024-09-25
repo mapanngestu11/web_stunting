@@ -26,13 +26,13 @@
 
           <div class="row mb-3">
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-6 mb-4">
+            <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Informasi User</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">35</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $jumlah_user[0]->jumlah ;?></div>
 
                     </div>
                     <div class="col-auto">
@@ -43,13 +43,13 @@
               </div>
             </div>
             <!-- Earnings (Annual) Card Example -->
-            <div class="col-xl-4 col-md-6 mb-4">
+            <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Jumlah Laporan Masuk</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Jumlah Data Balita</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $jumlah_balita[0]->jumlah ;?></div>
 
                     </div>
                     <div class="col-auto">
@@ -59,14 +59,30 @@
                 </div>
               </div>
             </div>
-            <!-- New User Card Example -->
-            <div class="col-xl-4 col-md-6 mb-4">
+            <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Menunggu Verifikasi</div>
-                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">5</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Jumlah Laporan Stunting</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $jumlah_stunting[0]->jumlah ;?></div>
+
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-file fa-2x text-warning"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- New User Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Laporan perubahan data</div>
+                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $jumlah_perubahan[0]->jumlah ;?></div>
 
                     </div>
                     <div class="col-auto">

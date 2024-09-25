@@ -10,7 +10,7 @@ class Homepage  extends CI_Controller
         $this->load->helper('form');
         $this->load->helper('url');
         $this->load->library('upload');
-        // $this->load->model('M_login');
+        $this->load->model('M_rumus');
         // $this->load->model('M_kelas');
         // $this->load->model('M_siswa');
         // $this->load->model('M_pembayaran');
@@ -26,20 +26,13 @@ class Homepage  extends CI_Controller
 
     public function index()
     {
-        // $nis = $this->session->userdata('nis');  
-        // $data['data_kelas'] = $this->M_kelas->tampil_data();
-        // $data['siswa'] = $this->M_siswa->tampil_data_by_nis($nis);
-        // $data['pembayaran'] = $this->M_pembayaran->get_data_pembayaran_santri($nis);
 
-        // $data['jumlah_bayar'] = $this->M_pembayaran->jumlah_data();
-        // $data['jumlah_status'] = $this->M_status_pembayaran->jumlah_data();
-        // $data['jumlah_santri'] = $this->M_siswa->jumlah_data_santri();
-        // $data['jumlah_kegiatan'] = $this->M_kegiatan->jumlah_data_kegiatan();
-
-        // $data['data_pembayaran'] = $this->M_pembayaran->get_data_pembayaran_all();
+        $data['jumlah_user'] = $this->M_rumus->jumlah_data_user()->result();
+        $data['jumlah_balita'] = $this->M_rumus->jumlah_data_balita()->result();
+        $data['jumlah_stunting'] = $this->M_rumus->jumlah_data_stunting()->result();
+        $data['jumlah_perubahan'] = $this->M_rumus->jumlah_perubahan()->result();
 
 
-
-        $this->load->view('Admin/Homepage.php');
+        $this->load->view('Admin/Homepage.php',$data);
     }
 }
