@@ -56,7 +56,8 @@ public function get_data_by_range()
     a.status_stunting,
     b.status_pengukuran,
     c.nama_lengkap,
-    a.waktu,');
+    a.waktu,
+    b.kader');
   $this->db->from('tabel_pengukuran as a');
   $this->db->join('tabel_data_balita as b', 'a.no_pendataan = b.no_pendataan');
   $this->db->join('tabel_user as c', 'a.id_user = b.id_user');

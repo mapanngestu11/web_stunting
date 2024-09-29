@@ -8,18 +8,24 @@
 
 	<style type="text/css">
 		.logo{
-			height: 100px;
-			padding-left: 200px;
-		}
+			height: 120px;
+			padding-left: 500px;
+			text-align: center;
+			justify-content: center; /* Horizontally centers the image */
+			align-items: center; /* Vertically centers the image */
+		}	
 		.judul{
-			padding-left: 136px;
+			padding-left: 320px;
+		}
+		.tabel_cetak_laporan{
+			font-size: 10px !important;
 		}
 	</style>
 	<div class="container">
 		<div class="row">
-			
-			<img src="<?php echo base_url() . "assets/Admin/"; ?>img/logo/logo_posyandu.png" class="logo">
-			
+			<center>
+				<img src="<?php echo base_url() . "assets/Admin/"; ?>img/logo/logo_posyandu.png" class="logo">
+			</center>
 			
 			<h3 class="judul">Laporan Stunting - Posyandu Mekarsari</h3>
 			
@@ -74,7 +80,7 @@
 	<center>
 		<h3> Data Laporan Stunting </h3>
 	</center>
-	<table>
+	<table class="tabel_cetak_laporan">
 		<thead>
 			<tr>
 				<th>No.</th>
@@ -87,6 +93,7 @@
 				<th>Nama Ibu</th>
 				<th>Alamat</th>
 				<th>Keterangan Stunting</th>
+				<th>Nama Posyandu</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -119,6 +126,7 @@
 								Normal
 							<?php }?>
 						</td>
+						<td><?php echo $data['kader'];?></td>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>
@@ -126,8 +134,8 @@
 		<script type="text/javascript">
 			window.print();
 		</script>
+		
 
 
-
-	</body>
-	</html>
+</body>
+</html>
