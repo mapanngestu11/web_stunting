@@ -90,4 +90,106 @@ function tampil_data_bynopendataan ($no_pendataan)
   $query = $this->db->get();
   return $query;
 }
+
+function get_data_balita_bulan_januari(){
+  $this->db->select('count(id_data_balita) as jumlah');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('MONTH(waktu)', 1);
+  $query = $this->db->get();
+  return $query;
+}
+function get_data_balita_bulan_februari(){
+  $this->db->select('count(id_data_balita) as jumlah');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('MONTH(waktu)', 2);
+  $query = $this->db->get();
+  return $query;
+}
+function get_data_balita_bulan_maret(){
+  $this->db->select('count(id_data_balita) as jumlah');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('MONTH(waktu)', 3);
+  $query = $this->db->get();
+  return $query;
+}
+function get_data_balita_bulan_april(){
+  $this->db->select('count(id_data_balita) as jumlah');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('MONTH(waktu)', 4);
+  $query = $this->db->get();
+  return $query;
+}
+function get_data_balita_bulan_mei(){
+  $this->db->select('count(id_data_balita) as jumlah');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('MONTH(waktu)', 5);
+  $query = $this->db->get();
+  return $query;
+}
+function get_data_balita_bulan_juni(){
+  $this->db->select('count(id_data_balita) as jumlah');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('MONTH(waktu)', 6);
+  $query = $this->db->get();
+  return $query;
+}
+function get_data_balita_bulan_juli(){
+  $this->db->select('count(id_data_balita) as jumlah');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('MONTH(waktu)', 7);
+  $query = $this->db->get();
+  return $query;
+}
+function get_data_balita_bulan_agustus(){
+  $this->db->select('count(id_data_balita) as jumlah');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('MONTH(waktu)', 8);
+  $query = $this->db->get();
+  return $query;
+}
+function get_data_balita_bulan_september(){
+  $this->db->select('count(id_data_balita) as jumlah');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('MONTH(waktu)', 9);
+  $query = $this->db->get();
+  return $query;
+}
+function get_data_balita_bulan_oktober(){
+  $this->db->select('count(id_data_balita) as jumlah');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('MONTH(waktu)', 10);
+  $query = $this->db->get();
+  return $query;
+}
+function get_data_balita_bulan_november(){
+  $this->db->select('count(id_data_balita) as jumlah');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('MONTH(waktu)', 11);
+  $query = $this->db->get();
+  return $query;
+}
+function get_data_balita_bulan_desember(){
+  $this->db->select('count(id_data_balita) as jumlah');
+  $this->db->from('tabel_data_balita');
+  $this->db->where('MONTH(waktu)', 12);
+  $query = $this->db->get();
+  return $query;
+}
+
+function get_data_balita_stunting(){
+  $this->db->select('count(id_stunting) as jumlah');
+  $this->db->from('tabel_pengukuran');
+ $this->db->where('status_stunting', 1);  // First condition
+ $this->db->or_where('status_stunting', 2); 
+ $query = $this->db->get();
+ return $query;
+}
+function get_data_balita_normal(){
+  $this->db->select('count(id_stunting) as jumlah');
+  $this->db->from('tabel_pengukuran');
+ $this->db->where('status_stunting', 3);  // First condition
+ $query = $this->db->get();
+ return $query;
+}
+
 }

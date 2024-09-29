@@ -62,7 +62,7 @@ class Balita  extends CI_Controller
       'nik_ibu' => $nik_ibu,
       'nama_ibu' => $nama_ibu,
       'alamat' => $alamat,
-
+      'status_pengukuran' => $status_pengukuran,
       'id_user' => $id_user,
       'waktu' => $waktu
     );
