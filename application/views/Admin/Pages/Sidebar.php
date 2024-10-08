@@ -1,6 +1,37 @@
+<?php
+$hak_akses = $this->session->userdata('hak_akses');
+
+
+if($hak_akses == 'Admin') {
+  $bg_navbar_color = 'bg-blue';
+} elseif($hak_akses == 'Bidan') {
+  $bg_navbar_color = 'bg-red';
+}elseif($hak_akses == 'Kader'){
+  $bg_navbar_color = 'bg-green';
+}else{
+  $bg_navbar_color = 'bg-yellow';
+
+}
+?>
+
+<style type="text/css">
+  .bg-blue{
+    background-color: #6777ef !important;
+  }
+  .bg-red{
+    background-color: #da4848 !important;
+  }
+  .bg-green{
+    background-color: #35a442 !important;
+  }
+  .bg-yellow{
+    background-color: #bcc42e !important;
+  }
+</style>
+
 <?php if($this->session->userdata('hak_akses')==='Admin' ):?> 
   <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center <?php echo $bg_navbar_color;?> justify-content-center" href="index.html">
       <div class="sidebar-brand-icon">
         <img src="<?php echo base_url() . "assets/Admin/"; ?>img/logo/logo_posyandu.png">
       </div>
@@ -77,8 +108,8 @@
   <hr class="sidebar-divider">
 </ul>
 <?php elseif($this->session->userdata('hak_akses')==='Bidan'):?> 
-  <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+  <ul class="navbar-nav sidebar sidebar-light  accordion" id="accordionSidebar">
+    <a class="sidebar-brand d-flex align-items-center <?php echo $bg_navbar_color;?> justify-content-center" href="index.html">
       <div class="sidebar-brand-icon">
         <img src="<?php echo base_url() . "assets/Admin/"; ?>img/logo/logo_posyandu.png">
       </div>
@@ -154,14 +185,14 @@
 <hr class="sidebar-divider">
 </ul>
 <?php elseif($this->session->userdata('hak_akses')==='Kader'):?> 
-  <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-      <div class="sidebar-brand-icon">
+  <ul class="navbar-nav sidebar sidebar-light  accordion" id="accordionSidebar">
+    <a class="sidebar-brand d-flex align-items-center <?php echo $bg_navbar_color;?> justify-content-center" href="index.html">
+      <div class="sidebar-brand-icon <?php echo $bg_navbar_color;?>">
         <img src="<?php echo base_url() . "assets/Admin/"; ?>img/logo/logo_posyandu.png">
       </div>
       <?php $hak_akses =  $this->session->userdata('hak_akses');?>
 
-      <div class="sidebar-brand-text mx-3"><?php echo $hak_akses;?></div>
+      <div class="sidebar-brand-text mx-3 "><?php echo $hak_akses;?></div>
     </a>
     <hr class="sidebar-divider my-0">
     <li class="nav-item active">
@@ -196,8 +227,8 @@
     
   </ul>
   <?php elseif($this->session->userdata('hak_akses')==='Kepdes' ):?> 
-    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <ul class="navbar-nav sidebar sidebar-light  accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center <?php echo $bg_navbar_color;?> justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
           <img src="<?php echo base_url() . "assets/Admin/"; ?>img/logo/logo_posyandu.png">
         </div>

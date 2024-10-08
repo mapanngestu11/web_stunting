@@ -10,6 +10,13 @@
       height: 180px;
       width: 200px;
     }
+    .font_logo{
+      font-weight: bold;
+      font-size: 40px;
+      color: rgb(6,143,177);
+      margin-top: -20px;
+      
+    }
   </style>
   <div class="container-login">
     <div class="row justify-content-center">
@@ -22,6 +29,7 @@
                   <div class="text-center">
 
                     <img class="logo_posyandu" src="<?php echo base_url() . "assets/Homepage/assets/"; ?>img/logo_posyandu.png" height="70" alt="logo" />
+                    <p class="font_logo">Mekarsari</p>
                   </div>
                   <p><?php echo $this->session->flashdata('msg'); ?></p>
                   <form class="user" action="<?php echo base_url() . 'Login/auth' ?>" method="POST">
